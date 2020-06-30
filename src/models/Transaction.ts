@@ -24,9 +24,12 @@ class Transaction {
   @Column('decimal')
   value: number;
 
+  @Column()
+  category_id: Category;
+
   @ManyToOne(() => Category)
   @JoinColumn({ name: 'category_id' })
-  category_id: Category;
+  category: Category;
 
   @CreateDateColumn()
   created_at: Date;
